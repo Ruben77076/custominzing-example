@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Heading() {
+function Heading(props) {
+    const fName = props.firstName +' '+ props.firstname;
+    console.log(fName);
+  
   return (
-    <div>Heading</div>
+    <h1>Hello,{fName} </h1>
   )
 }
 
