@@ -1,28 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import './components/Heading';
-import Heading from './components/Heading';
-
+import React from 'react';
+import ReactPlayer from 'react-player';
 function App() {
-  const handleClick = () =>{
-    let randomNum = Math.floor(Math.random()*3)+1;
-    console.log(randomNum);
 
-    let userInput = prompt('type a number here ||');
-    alert(`Computer number: ${randomNum}, Your guess: ${userInput}`);
-  }
+  const vidUrl = "https://www.facebook.com/facebook/videos/10153231379946729"
   return (
-    <div className="App-header App">
-        <img src={logo} className="App-logo" alt="logo" />
-      
-      <Heading 
-        firstName="Bob"
-        firstname="Another random name"
-      />
-      <button onClick={handleClick}>
-        Guess the number between 1 and 3.
-      </button>
+    <>
+    <div className="App">
+      <div className="container">
+        <div style={{textAlign:"center"}}>
+        <h1>My React Player</h1>
+
+        </div>
+      </div>
+      <div className="container">
+        <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+        <ReactPlayer
+          url={vidUrl}
+          playing={false}
+          volume={0.5}
+        />
+
+        </div>
+      </div>
     </div>
+    
+    </>
   );
 }
 
